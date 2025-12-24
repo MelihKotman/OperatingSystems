@@ -43,3 +43,4 @@ add_executable(soru5-limitedbuffersadecesemafor Vize/sorubes-limitedbuffersadece
 add_executable(Memory1 Memory/MemoryOne.c)
 add_executable(Memory2 Memory/MemorySecond.c)
 add_executable(brkEx Memory/brkEx.c)
+add_executable(MemSegment Memory/MemorySegmentation.c)
