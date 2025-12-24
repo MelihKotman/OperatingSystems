@@ -97,3 +97,32 @@ int main(int argc, char **argv) {
     printf("%d\n", x[1]); // x[1]'in son değerini basar.
     return 0;
 }
+
+/*
+ * ======================================================================================
+ * KOD ÖZETİ: BELLEK YÖNETİMİ VE INT POINTER ARİTMETİĞİ
+ * ======================================================================================
+ *
+ * 1. BELLEK BÖLGELERİ (Memory Segments):
+ * - 'int a[100]': Global değişken olduğu için Data/BSS bölgesinde tutulur.
+ * - 'int x[5]': Fonksiyon içinde (yerel) olduğu için Stack (Yığın) bölgesinde tutulur.
+ *
+ * 2. POINTER ARİTMETİĞİ (İşaretçi Matematiği):
+ * - Dizi elemanları 'int' tipindedir (genellikle 4 byte).
+ * - Bu nedenle (x + 1) işlemi, matematiksel olarak 1 eklemek değil,
+ * bellek adresini "1 tam sayı boyutu" (4 byte) ileri taşımak demektir.
+ * - Örnek: x adresi 0x1000 ise, (x + 1) adresi 0x1004 olur.
+ *
+ * 3. ERİŞİM YÖNTEMLERİ (Indexing vs Dereferencing):
+ * - x[1] (indeksleme) ile *(x + 1) (pointer dereference) derleyici için aynıdır.
+ * - x[1] = 10; komutu ile *(x + 1) = 10; komutu bellekte aynı yeri değiştirir.
+ *
+ * 4. SOL DEĞER (L-Value) KURALI:
+ * - (x + 1) = 10; -> HATALIDIR. Çünkü (x+1) bellekteki bir adres bilgisidir (konumdur).
+ * Konumun kendisi değiştirilemez, sadece o konumdaki veri değiştirilebilir.
+ * - *(x + 1) = 10; -> GEÇERLİDİR. O adresteki kutunun içindeki değeri değiştirir.
+ *
+ * ÖZETLE: Bu kod, int dizilerinin bellekte ardışık 4'er byte yer kapladığını ve
+ * pointer kullanarak bu bloklar üzerinde nasıl gezileceğini kanıtlar.
+ * ======================================================================================
+ */

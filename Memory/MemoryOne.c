@@ -76,3 +76,35 @@ int main(int argc, char **argv) {
 
     return 0;
 }
+
+/*
+ * ======================================================================================
+ * KOD ÖZETİ VE SONUÇ
+ * ======================================================================================
+ *
+ * BU PROGRAMIN TEMEL AMACI:
+ * C programlama dilinde değişkenlerin bellekte (RAM) nasıl yerleştiğini ve
+ * pointer (işaretçi) aritmetiğinin diziler üzerindeki etkisini göstermektir.
+ *
+ * ÇIKARILACAK DERSLER:
+ *
+ * 1. BELLEK YÖNETİMİ (Memory Layout):
+ * - Global değişkenler (a dizisi) program boyunca yaşar (Data/BSS).
+ * - Yerel değişkenler (y, x dizisi) fonksiyon çağrıldığında oluşur, bitince silinir (Stack).
+ * - Dinamik bellek (malloc) programcı tarafından yönetilir (Heap).
+ *
+ * 2. POINTER VE DİZİ İLİŞKİSİ (Arrays act like Pointers):
+ * - Bir dizinin adı (x), o dizinin bellekteki başlangıç adresini tutan bir pointer gibidir.
+ * - 'x' adresi ile '&x[0]' adresi aynıdır.
+ *
+ * 3. POINTER ARİTMETİĞİ VE ERİŞİM:
+ * - x[1] yazmak ile *(x + 1) yazmak derleyici için tamamen aynı işlemdir.
+ * - (x + 1) ifadesi, x adresinden "1 veri tipi boyutu" (burada char olduğu için 1 bayt)
+ * kadar ileri git demektir.
+ * - Bu adrese '*' operatörü ile erişip (dereference) değer atamak, dizinin o
+ * indeksini değiştirmek demektir.
+ *
+ * Sonuç olarak program; bellek adreslerine doğrudan müdahale ederek dizinin 1. indeksindeki
+ * 5 değerini 10 olarak değiştirmiş ve bunu ekrana basmıştır.
+ * ======================================================================================
+ */
