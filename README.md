@@ -1,22 +1,66 @@
-# İşletim Sistemleri (Operating Systems) Alıştırmaları
+# OperatingSystems 🖥️
 
-Bu depo, İşletim Sistemleri dersi kapsamında C dilinde yazdığım temel alıştırmaları içermektedir.
+**OperatingSystems** — Temel işletim sistemi kavramlarını C ve Assembly ile örnekleyen bir eğitim/proje deposudur. Bu projede klasik senkronizasyon problemleri, işlem & bellek yönetimi, dosya sistemi, mesajlaşma ve çoklu iş parçacığı (thread) temaları üzerinde örnekler ve uygulamalar bulunur. 
 
-Proje, işletim sistemlerinin üç ana temel konseptini kapsayan üç ana klasöre ayrılmıştır:
+## 📄 Proje Hakkında
 
-1.  📁 **Process**
-    * `fork()`, `getpid()`, `getppid()` ve `waitpid()` gibi temel süreç (process) yönetimi komutları.
-    * `fork()` çağrısının bellek izolasyonu (stack ve heap) üzerindeki etkilerini gösteren örnekler.
+Bu depo, işletim sistemleri derslerinde karşılaşılan temel kavram ve algoritmaların **C** ve kısmen **Assembly** ile somutlaştırılmış implementasyonlarını içerir. Amaç, klasik teorik konuları pratik kodlarla anlamayı kolaylaştırmaktır. 
 
-2.  📁 **ProcessMessages (IPC)**
-    * Prosesler Arası Haberleşme (IPC) mekanizmaları.
-    * **Paylaşımlı Bellek (Shared Memory - shm):** `shmget`, `shmat`, `shmdt` kullanarak proseslerin aynı bellek alanını paylaşması.
-    * **Mesaj Kuyrukları (Message Queues - msg):** `msgget`, `msgsnd`, `msgrcv` kullanarak proseslerin birbirine güvenli bir şekilde mesaj göndermesi.
+Projede şu temalar işlenir:
 
-3.  📁 **Threadler (Pthreads)**
-    * `pthread_create`, `pthread_join` kullanarak iplik (thread) oluşturma ve yönetme.
-    * Global değişkenler üzerinde "Yarış Durumu" (Race Condition) ve senkronizasyon sorunlarını gösteren örnekler.
+- Senkronizasyon problemleri (ClassicSynchronizationProblems)  
+- Kritik Bölge & Mutual Exclusion (CriticalSection)  
+- Dosya Sistemi örnekleri (FileSystem)  
+- Bellek yönetimi (Memory)  
+- İşlem & Thread yönetimi (Process, Threadler)  
+- Mesajlaşma / IPC mekanizmaları (ProcessMessages)  
+- Vize Örnekleri (Vize)  
+- CMake yapılandırması (.gitignore, CMakeLists.txt)
 
-## Derleme
+---
 
-Tüm proje, ana dizindeki `CMakeLists.txt` dosyası kullanılarak CLion veya komut satırı (cmake/make) üzerinden derlenebilir. Her `.c` dosyası, kendi adıyla (veya `CMakeLists.txt` içinde belirtilen adla) çalıştırılabilir bir program olarak derlenir.
+## 📂 Dosya / Modül Açıklamaları
+
+Aşağıda depodaki ana klasör ve dosyaların kısa açıklamaları yer almaktadır: 
+
+
+| Klasör / Dosya | Açıklama |
+|----------------|----------|
+| `ClassicSynchronizationProblems/` | Klasik senkronizasyon problemlerinin örnekleri (örneğin Üretici-Tüketici vb.) |
+| `CriticalSection/` | Kritik bölge ve mutual exclusion (çoklu thread’lerde güvenli erişim) örnekleri |
+| `FileSystem/` | Basit dosya sistemi benzetimleri ve örnek kodlar |
+| `Memory/` | Bellek tahsisi / yönetimi ile ilgili örnekler |
+| `Process/` | İşlem kontrolü, fork/exec benzeri yapılar |
+| `ProcessMessages/` | Process’ler arası mesajlaşma / dispatcher örnekleri |
+| `Threadler/` | Thread oluşturma, yönetme ve eş zamanlılık örnekleri |
+| `Vize/` | Değerlendirme/test programları ve görselleştirme araçları |
+| `CMakeLists.txt` | Projenin CMake yapılandırma dosyası |
+| `.gitignore` | Git için yoksayılan dosya tanımları |
+
+---
+
+## ⚙️ Kurulum & Çalıştırma
+
+Bu proje **CMake** kullanılarak derlenebilir.
+
+### Gereksinimler
+
+- C/C++ derleyicisi (GCC/Clang/MSVC)
+- CMake
+- Make veya benzeri build aracı
+
+### Adımlar
+
+```bash
+# Depoyu klonla
+git clone https://github.com/MelihKotman/OperatingSystems.git
+cd OperatingSystems
+
+# Build klasörü oluştur ve derle
+mkdir build
+cd build
+cmake ..
+make
+
+# Örnek bir modülü çalıştır
+./ClassicSynchronizationProblems/example
