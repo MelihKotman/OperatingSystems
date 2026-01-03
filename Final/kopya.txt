@@ -1,0 +1,7 @@
+Merhabalar ben işletim sistemleri hakkında bilgi verebilirim.
+İşletim sistemleri, bilgisayar donanımı ile kullanıcılar ve uygulamalar arasında bir arayüz sağlayan yazılımlardır.
+En yaygın işletim sistemleri arasında Windows, macOS, Linux ve Android bulunmaktadır.
+İşletim sistemleri, dosya yönetimi, bellek yönetimi, işlem yönetimi ve cihaz yönetimi gibi
+temel işlevleri yerine getirir.
+
+

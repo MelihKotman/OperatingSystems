@@ -3,7 +3,8 @@ project(OperatingSystemsCode C)
 
 set(CMAKE_C_STANDARD 23)
 
-add_executable(PID1 Process/PID1.c)
+add_executable(PID1 Process/PID1.c
+        Process/exec_ornekleri.c)
 add_executable(PID2 Process/PID2.c)
 add_executable(PID3 Process/PID3.c)
 add_executable(PID4 Process/PID4.c)
@@ -50,3 +51,6 @@ add_executable(MemOptimize Memory/MemoryOptimization.c)
 add_executable(systemCalls FileSystem/systemCalls.c)
 add_executable(PhilosophersProb ClassicSynchronizationProblems/TheProblemofDiningPhilosophers/DiningPhilosophers.c)
 add_executable(ReadWriteProb ClassicSynchronizationProblems/TheReaderWriterProblem/ReaderWriter.c)
+add_executable(exec Process/exec_ornekleri.c)
+add_executable(FinalCalisma Final/FinalCalisma.c)
+add_executable(LimBufferSem ClassicSynchronizationProblems/LimitedBufferProblem/LimBufferSem.c)
